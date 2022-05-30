@@ -2,27 +2,30 @@
 <head>
 <title>whomi</title>
 <style>
-.dialog {
-    height: 70vh;
-    width: 100vw;
-    border: 1px solid;
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-}
+.dialoge { // dialoge的固定宽高显示
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 1rem;
+	height: 1rem;
+	margin: auto;
+}  
 .content {
-    display: inline-block;
-    background: #ccc;
-	padding: .1rem;
+	background: #ccc;
+	text-align: center;
+	line-height: 1rem;
 	border-radius: .1rem;
 }
 </style>
 </head>
 <body>
-<div class="dialog">
+<div class="dialoge">
     <div class="content">
-        vertical-align: middle
+       <p><a size="1000">WHOMI</a></p> 
     </div>
 </div>
+
 </body>
 </html>
