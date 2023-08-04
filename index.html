@@ -29,19 +29,26 @@
 									<p><h2> <a href='http://www.whomi.icu:7777/' target='_blank' align='center'>论坛</a></h2><p>
 									<p><h2> <a href='http://www.whomi.icu:9999/' target='_blank' align='center'>博客</a></h2><p>
 									<p><h2> <a href='http://www.whomi.icu:8888/' target='_blank' align='center'>靶场</a></h2><p>
-										    <form>
-        <label for="url">输入URL:</label>
-        <input type="text" id="url" name="url">
-        <button type="button" onclick="redirect()">跳转</button>
-    </form>
+										<p><h2>
+<form id="portForm">
+    <label for="port">端口号：</label>
+    <input type="text" id="port" name="port" required>
+    <input type="submit" value="跳转">
+  </form>
 
-    <script>
-        function redirect() {
-            var url = document.getElementById("url").value;
-            window.open(url);
-        }
-    </script>
-									<p><h2> <a href='http://www.whomi.icu:8081/' target='_blank' align='center'>NAS</a></h2><p>
+  <script>
+    document.getElementById("portForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const port = document.getElementById("port").value;
+      if (port.match(/^\d+$/)) {
+        const url = `http://whomi.icu:${port}`;
+        window.open(url, "_blank");
+      } else {
+        alert("请输入有效的端口号（只能是数字）！");
+      }
+    });
+  </script>
+									 </h2><p>
 									</span>
 									</a>
 								</span>
